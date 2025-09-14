@@ -1,25 +1,39 @@
 # Cemetery Carnage
 
-## Overview
-*Cemetery Carnage* is a small 3D survival game set in a spooky graveyard. The player must survive as long as possible while enemies spawn and chase them. This project was built as an experiment to learn the basics of 3D game development.
+## 🕹️ Overview
+*Cemetery Carnage* is a small 3D survival game set in a spooky graveyard. The player must survive as long as possible while enemies spawn and chase them.  
+This project was built as an experiment to learn the basics of 3D environments, movement controls, and simple enemy behavior.
 
-## Features
+## ✨ Features
 - Spooky 3D graveyard environment
 - Player movement with simple controls
 - Enemies spawn and chase the player
 - Continuous survival loop until defeat
 
-## Known Issues
+## 🐛 Known Issues
 - Buggy behavior — occasional crashes
 - Long load times for assets
 - Very basic gameplay (no combat, scoring, or win screen)
 - Simple visuals and lighting
 - Performance drops with too many enemies
-- No sound or music
+- No sound or music polish
 
-## Conclusion
-While *Cemetery Carnage* is rough and limited, it still runs as a working prototype. It demonstrates the fundamentals of 3D environments, movement, and basic enemy AI, making it a solid learning milestone.
+## 🙏 Credits & Support
+- **3D Models & Game Assets**  
+  - [Quaternius](https://quaternius.com) – Free 3D models (CC0 License)  
+  - [Kenney](https://kenney.nl) – Game assets & models (CC0 License)  
 
----
+- **Audio / Music**  
+  - [The Cynic Project](https://thecynicproject.com) – Background music  
+  - [Section 31 – Tech](https://soundcloud.com/section31tech) – Sound effects and audio  
 
-📌 *Note: This project is for practice and experimentation. It is not a polished product but reflects early steps in learning 3D game development.*
+
+## 🎮 Controls
+See [`controls.txt`](controls.txt) for a full list of controls.  
+Quick reference:  
+- **WASD / Arrow Keys** → Move  
+- **Mouse** → Look around  
+- **F** → Flash Enable/Disable
+- **Space** → Jump    
+
+## 📦 Project Structure
