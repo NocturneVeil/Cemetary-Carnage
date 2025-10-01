@@ -39,4 +39,4 @@ Quick reference:
 
 ## ‼️NOTE 
 - Game files are not optimized in any manner.
-  
+- Use Godot Engine to access these files.
