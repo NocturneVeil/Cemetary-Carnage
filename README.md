@@ -19,9 +19,10 @@ This project was built as an experiment to learn the basics of 3D environments, 
 - No sound or music polish
 
 ## 🙏 Credits & Support
-- **3D Models & Game Assets**  
+- **3D Models & Game Assets** 
   - [Quaternius](https://quaternius.com) – Free 3D models (CC0 License)  
-  - [Kenney](https://kenney.nl) – Game assets & models (CC0 License)  
+  - [Kenney](https://kenney.nl) – Game assets & models (CC0 License)
+  - [Assets](https://opengameart.org/) - Misc Assets of Varied licenses
 
 - **Audio / Music**  
   - [The Cynic Project](https://thecynicproject.com) – Background music  
@@ -36,4 +37,6 @@ Quick reference:
 - **F** → Flash Enable/Disable
 - **Space** → Jump    
 
-## 📦 Project Structure
+## ‼️NOTE 
+- Game files are not optimized in any manner.
+  
