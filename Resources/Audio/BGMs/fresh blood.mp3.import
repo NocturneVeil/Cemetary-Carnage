@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b0gvmwivh8gky"
+path="res://.godot/imported/fresh blood.mp3-0e63858ce38b348b48935a5ba853e493.mp3str"
+
+[deps]
+
+source_file="res://Resources/Audio/BGMs/fresh blood.mp3"
+dest_files=["res://.godot/imported/fresh blood.mp3-0e63858ce38b348b48935a5ba853e493.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

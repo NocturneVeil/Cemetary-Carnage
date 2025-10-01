@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://de5fqr5ijjsoj"]
+
+[ext_resource type="PackedScene" uid="uid://dl756io0862fm" path="res://Assets/kenney_graveyard-kit/Models/FBX format/Border/border-pillar.fbx" id="1_6h2oj"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_5pnpn"]
+
+[node name="border-pillar" instance=ExtResource("1_6h2oj")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="border_pillar" index="0"]
+transform = Transform3D(0.1, 0, 0, 0, 1, 0, 0, 0, 0.1, 0, 0.469268, 0)
+visible = false
+mesh = SubResource("BoxMesh_5pnpn")

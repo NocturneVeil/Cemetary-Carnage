@@ -1,0 +1,58 @@
+[gd_scene load_steps=6 format=3 uid="uid://b2eowkt75hpov"]
+
+[ext_resource type="PackedScene" uid="uid://cv3pxnnm6pg5b" path="res://Assets/kenney_graveyard-kit/Models/FBX format/Lightpost/lightpost-double.fbx" id="1_g3b7o"]
+[ext_resource type="Material" uid="uid://bbh25yinxsb6a" path="res://Resources/Iron Fence/Fence_Mettalic.tres" id="2_gbobb"]
+[ext_resource type="Material" uid="uid://crkb55rjcfj8" path="res://Resources/Lightpost and piller/Lighting lightpost.tres" id="3_nlpj2"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ndyg4"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_whrba"]
+height = 2.79045
+
+[node name="lightpost-double" instance=ExtResource("1_g3b7o")]
+collision_layer = 7
+collision_mask = 7
+
+[node name="lightpost_double" parent="." index="0"]
+transform = Transform3D(3, 0, 0, 0, 4, 0, 0, 0, 3, 0, 0, 0)
+layers = 7
+lod_bias = 0.3
+visibility_range_end = 45.0
+visibility_range_end_margin = 95.0
+visibility_range_fade_mode = 2
+surface_material_override/0 = ExtResource("2_gbobb")
+
+[node name="LIght 1" type="MeshInstance3D" parent="lightpost_double" index="0"]
+transform = Transform3D(0.12, 0, 0, 0, 0.17, 0, 0, 0, 0.12, 0, 1.0872, 0.238005)
+layers = 7
+lod_bias = 0.1
+visibility_range_end = 45.0
+visibility_range_end_margin = 95.0
+visibility_range_fade_mode = 2
+mesh = SubResource("BoxMesh_ndyg4")
+surface_material_override/0 = ExtResource("3_nlpj2")
+
+[node name="LIght 2" type="MeshInstance3D" parent="lightpost_double" index="1"]
+transform = Transform3D(0.12, 0, 0, 0, 0.17, 0, 0, 0, 0.12, 0, 1.0872, -0.237035)
+layers = 7
+lod_bias = 0.1
+visibility_range_end = 45.0
+visibility_range_end_margin = 95.0
+visibility_range_fade_mode = 2
+mesh = SubResource("BoxMesh_ndyg4")
+surface_material_override/0 = ExtResource("3_nlpj2")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="lightpost_double" index="2"]
+transform = Transform3D(0.333333, 0, 0, 0, -1.09278e-08, 0.25, 0, -0.333333, -1.45705e-08, 0, 1.2372, 0.00467167)
+light_color = Color(1, 0.647059, 0, 1)
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_bake_mode = 1
+distance_fade_enabled = true
+spot_range = 10.5
+spot_attenuation = 0.0
+spot_angle = 65.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1.7, 0, 0, 0, 1, 0, 2.59282, 0)
+shape = SubResource("CylinderShape3D_whrba")

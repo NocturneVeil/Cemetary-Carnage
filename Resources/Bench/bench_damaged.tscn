@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://ey32yslij6m"]
+
+[ext_resource type="PackedScene" uid="uid://bwtb3j1kcbmyn" path="res://Assets/kenney_graveyard-kit/Models/FBX format/Bench/bench-damaged.fbx" id="1_ga1e7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_81amr"]
+size = Vector3(2.5, 1.4, 1.2)
+
+[node name="bench-damaged" instance=ExtResource("1_ga1e7")]
+collision_layer = 7
+collision_mask = 7
+
+[node name="bench_damaged" parent="." index="0"]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0, 0)
+lod_bias = 0.3
+visibility_range_end = 25.0
+visibility_range_end_margin = 45.0
+visibility_range_fade_mode = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0.593823, 0)
+shape = SubResource("BoxShape3D_81amr")

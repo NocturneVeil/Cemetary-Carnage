@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://c83ee15fuvixl"]
+
+[ext_resource type="PackedScene" uid="uid://ds6d5y44boten" path="res://Assets/kenney_graveyard-kit/Models/FBX format/Brick/brick-wall-end.fbx" id="1_swyxf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f1gkv"]
+size = Vector3(1, 0.827637, 0.202881)
+
+[sub_resource type="BoxOccluder3D" id="BoxOccluder3D_gykso"]
+size = Vector3(2.41183, 1.83303, 0.312135)
+
+[node name="brick-wall-end" instance=ExtResource("1_swyxf")]
+collision_layer = 7
+collision_mask = 7
+
+[node name="brick_wall_end" parent="." index="0"]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0, 0)
+layers = 7
+lod_bias = 0.1
+visibility_range_end = 35.0
+visibility_range_end_margin = 65.0
+visibility_range_fade_mode = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 1.04021, -1.02142)
+shape = SubResource("BoxShape3D_f1gkv")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0127081, 0.832404, -1.04046)
+occluder = SubResource("BoxOccluder3D_gykso")

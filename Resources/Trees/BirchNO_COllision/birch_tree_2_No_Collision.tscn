@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0ggjn7o6g07n"]
+
+[ext_resource type="PackedScene" uid="uid://bkkyhkhqdw8me" path="res://Assets/Ultimate Nature Pack - Jun 2019/FBX/Birch Tree/Birch Trees Norm/BirchTree_2.fbx" id="1_qa3um"]
+
+[sub_resource type="BoxOccluder3D" id="BoxOccluder3D_7c7fr"]
+size = Vector3(0.441013, 2.64415, 0.55459)
+
+[node name="BirchTree_2" instance=ExtResource("1_qa3um")]
+collision_layer = 7
+collision_mask = 7
+
+[node name="BirchTree_2" parent="." index="0"]
+transform = Transform3D(350, 0, 0, 0, -1.5299e-05, 350, 0, -350, -1.5299e-05, 0, 0, 0)
+layers = 3
+lod_bias = 0.5
+visibility_range_end = 35.0
+visibility_range_end_margin = 65.0
+visibility_range_fade_mode = 2
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 0.995159, -0.0982777, 0, 0.0982777, 0.995159, 0, 1.12649, 0.138586)
+occluder = SubResource("BoxOccluder3D_7c7fr")

@@ -1,0 +1,233 @@
+[gd_scene load_steps=13 format=3 uid="uid://gfhmdu7lca1i"]
+
+[ext_resource type="FontFile" uid="uid://d1q5ckqvb8bl1" path="res://Fonts/Blackcraft.ttf" id="1_6sa3x"]
+[ext_resource type="Script" uid="uid://dov81335gvh5h" path="res://main_menu.gd" id="1_7vkfs"]
+[ext_resource type="FontFile" uid="uid://b88f15c8osw0s" path="res://Fonts/HellsCemetery-Regular.ttf" id="2_3sb8w"]
+[ext_resource type="Texture2D" uid="uid://b88ptd6kxcive" path="res://Resources/BGs/night-spooky-halloween-graveyard-cartoon-vector/2303.w063.n005.34B.p1.34.jpg" id="2_8gxxr"]
+[ext_resource type="AudioStream" uid="uid://8txvx8rgp2tk" path="res://Resources/Audio/SFX/Menu/Click.ogg" id="5_jibho"]
+[ext_resource type="AudioStream" uid="uid://dcbm2rouun1e1" path="res://Resources/Audio/SFX/Menu/Hover.ogg" id="6_gsrt1"]
+[ext_resource type="AudioStream" uid="uid://b0gvmwivh8gky" path="res://Resources/Audio/BGMs/fresh blood.mp3" id="7_i41ro"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wxd2g"]
+texture = ExtResource("2_8gxxr")
+modulate_color = Color(0.423651, 0.423651, 0.423651, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2svo7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0qgam"]
+bg_color = Color(0.92549, 0.87451, 0.8, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.235294, 0.239216, 0.215686, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0.235294, 0.239216, 0.215686, 0.196078)
+shadow_size = 5
+shadow_offset = Vector2(-5, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_in2r3"]
+bg_color = Color(0.235294, 0.239216, 0.215686, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.117647, 0.12549, 0.117647, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0.117647, 0.12549, 0.117647, 0.196078)
+shadow_size = 5
+shadow_offset = Vector2(-5, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0bip2"]
+bg_color = Color(0.411765, 0.458824, 0.396078, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.117647, 0.12549, 0.117647, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0.117647, 0.12549, 0.117647, 0.196078)
+shadow_size = 5
+shadow_offset = Vector2(-5, 5)
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7vkfs")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_wxd2g")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -587.0
+offset_top = -220.0
+offset_right = -78.0
+offset_bottom = 305.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/separation = 75
+alignment = 1
+
+[node name="Start Game" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.235294, 0.239216, 0.215686, 1)
+theme_override_colors/font_outline_color = Color(0.235294, 0.239216, 0.215686, 1)
+theme_override_colors/font_color = Color(0.92549, 0.87451, 0.8, 1)
+theme_override_colors/font_pressed_color = Color(0.92549, 0.87451, 0.8, 1)
+theme_override_fonts/font = ExtResource("1_6sa3x")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2svo7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0qgam")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_in2r3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0bip2")
+text = "Start Game
+"
+
+[node name="Options" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.235294, 0.239216, 0.215686, 1)
+theme_override_colors/font_outline_color = Color(0.235294, 0.239216, 0.215686, 1)
+theme_override_colors/font_color = Color(0.92549, 0.87451, 0.8, 1)
+theme_override_colors/font_pressed_color = Color(0.92549, 0.87451, 0.8, 1)
+theme_override_fonts/font = ExtResource("1_6sa3x")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2svo7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0qgam")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_in2r3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0bip2")
+text = "Options
+"
+
+[node name="Quit Game" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.235294, 0.239216, 0.215686, 1)
+theme_override_colors/font_outline_color = Color(0.235294, 0.239216, 0.215686, 1)
+theme_override_colors/font_color = Color(0.92549, 0.87451, 0.8, 1)
+theme_override_colors/font_pressed_color = Color(0.92549, 0.87451, 0.8, 1)
+theme_override_fonts/font = ExtResource("1_6sa3x")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2svo7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0qgam")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_in2r3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0bip2")
+text = "Quit Game
+"
+
+[node name="Credits" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 25)
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.235294, 0.239216, 0.215686, 1)
+theme_override_colors/font_outline_color = Color(0.235294, 0.239216, 0.215686, 1)
+theme_override_colors/font_color = Color(0.92549, 0.87451, 0.8, 1)
+theme_override_colors/font_pressed_color = Color(0.92549, 0.87451, 0.8, 1)
+theme_override_fonts/font = ExtResource("1_6sa3x")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2svo7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0qgam")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_in2r3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0bip2")
+text = "Credits"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.118
+anchor_top = 0.231
+anchor_right = 1.128
+anchor_bottom = 0.428
+offset_left = 0.540009
+offset_top = -107.32
+offset_right = -0.340088
+offset_bottom = -107.16
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.92549, 0.87451, 0.8, 1)
+theme_override_colors/font_shadow_color = Color(0.117647, 0.12549, 0.117647, 1)
+theme_override_colors/font_outline_color = Color(0.235294, 0.239216, 0.215686, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_3sb8w")
+theme_override_font_sizes/font_size = 160
+text = "Cemetery Carnage
+"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="Credit" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.177
+anchor_top = 0.869
+anchor_right = 0.366
+anchor_bottom = 0.982
+offset_left = 0.559998
+offset_top = 0.320007
+offset_right = 0.519958
+offset_bottom = -0.0400391
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.92549, 0.87451, 0.8, 1)
+theme_override_colors/font_shadow_color = Color(0.117647, 0.12549, 0.117647, 1)
+theme_override_colors/font_outline_color = Color(0.235294, 0.239216, 0.215686, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_3sb8w")
+theme_override_font_sizes/font_size = 60
+text = "By : Prathamesh_J"
+horizontal_alignment = 2
+vertical_alignment = 2
+uppercase = true
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_jibho")
+volume_db = -5.0
+bus = &"SFX"
+
+[node name="HoverOn" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_gsrt1")
+volume_db = -5.0
+bus = &"SFX"
+
+[node name="MainMenuBGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_i41ro")
+mix_target = 1
+bus = &"BGM"
+
+[connection signal="mouse_entered" from="VBoxContainer/Start Game" to="." method="_on_start_game_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/Start Game" to="." method="_on_start_game_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/Start Game" to="." method="_on_start_game_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/Options" to="." method="_on_options_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/Options" to="." method="_on_options_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/Quit Game" to="." method="_on_quit_game_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/Quit Game" to="." method="_on_quit_game_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/Quit Game" to="." method="_on_quit_game_pressed"]

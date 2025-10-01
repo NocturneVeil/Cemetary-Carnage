@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfyoxm2scl06g"]
+
+[ext_resource type="PackedScene" uid="uid://2000rccv3m12" path="res://Assets/kenney_graveyard-kit/Models/FBX format/Piller/pillar-small.fbx" id="1_5u55p"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_o0r3r"]
+points = PackedVector3Array(-0.1, 0, 0, 0, 0, 0, -0.1, 0, 0.1, -0.1, 0.459984, 0, 0, 0, 0.1, 0, 0.459984, 0, -0.1, 0.459984, 0.1, -0.05, 0.6, 0.05, 0, 0.459984, 0.1)
+
+[node name="pillar-small" instance=ExtResource("1_5u55p")]
+collision_layer = 3
+collision_mask = 3
+
+[node name="pillar_small" parent="." index="0"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+layers = 3
+lod_bias = 0.2
+visibility_range_end = 35.0
+visibility_range_end_margin = 65.0
+visibility_range_fade_mode = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_o0r3r")

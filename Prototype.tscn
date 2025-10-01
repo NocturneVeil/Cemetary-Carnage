@@ -1,0 +1,52 @@
+[gd_scene load_steps=10 format=3 uid="uid://ba6y15f04o4i4"]
+
+[ext_resource type="Texture2D" uid="uid://dvx5pn3ocnav2" path="res://Textures/Prototype_Dark/texture_01.png" id="1_8ovoj"]
+[ext_resource type="Texture2D" uid="uid://dky31j8wkuia7" path="res://Textures/Prototype_Green/texture_09.png" id="2_gq06i"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_gba4i"]
+vertices = PackedVector3Array(-1, 0.45, -0.75, -2, 0.45, -2, -2, 0.45, 2, -0.75, 0.45, 1.25, 1, 0.45, -1, 2, 0.45, -2, 0.75, 0.45, 1.25, 2, 0.45, 2, 1.25, 0.45, 0.75)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1), PackedInt32Array(4, 0, 5), PackedInt32Array(5, 0, 1), PackedInt32Array(6, 7, 3), PackedInt32Array(3, 7, 2), PackedInt32Array(4, 5, 8), PackedInt32Array(8, 5, 7), PackedInt32Array(7, 6, 8)]
+
+[sub_resource type="BoxMesh" id="BoxMesh_rmwow"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x3eh1"]
+albedo_texture = ExtResource("1_8ovoj")
+uv1_scale = Vector3(10, 10, 10)
+uv1_triplanar = true
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_4l730"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_thc34"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uu64e"]
+albedo_texture = ExtResource("2_gq06i")
+uv1_triplanar = true
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_qyx4v"]
+points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_gba4i")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D"]
+transform = Transform3D(5, 0, 0, 0, 0.1, 0, 0, 0, 5, 0, 0, 0)
+mesh = SubResource("BoxMesh_rmwow")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_x3eh1")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_4l730")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("BoxMesh_thc34")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_uu64e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/MeshInstance3D2"]
+shape = SubResource("ConvexPolygonShape3D_qyx4v")

@@ -1,0 +1,39 @@
+[gd_resource type="AudioBusLayout" load_steps=5 format=3 uid="uid://cqn2k7oubo25c"]
+
+[sub_resource type="AudioEffectNotchFilter" id="AudioEffectNotchFilter_2g27m"]
+resource_name = "NotchFilter"
+
+[sub_resource type="AudioEffectStereoEnhance" id="AudioEffectStereoEnhance_piwld"]
+resource_name = "StereoEnhance"
+
+[sub_resource type="AudioEffectStereoEnhance" id="AudioEffectStereoEnhance_hlwl0"]
+resource_name = "StereoEnhance"
+pan_pullout = 2.0
+time_pullout_ms = 5.0
+surround = 0.5
+
+[sub_resource type="AudioEffectSpectrumAnalyzer" id="AudioEffectSpectrumAnalyzer_1emdq"]
+resource_name = "SpectrumAnalyzer"
+fft_size = 4
+
+[resource]
+bus/1/name = &"SFX"
+bus/1/solo = false
+bus/1/mute = false
+bus/1/bypass_fx = false
+bus/1/volume_db = 0.0
+bus/1/send = &"Master"
+bus/1/effect/0/effect = SubResource("AudioEffectNotchFilter_2g27m")
+bus/1/effect/0/enabled = true
+bus/1/effect/1/effect = SubResource("AudioEffectStereoEnhance_piwld")
+bus/1/effect/1/enabled = true
+bus/2/name = &"BGM"
+bus/2/solo = false
+bus/2/mute = false
+bus/2/bypass_fx = false
+bus/2/volume_db = 0.0
+bus/2/send = &"Master"
+bus/2/effect/0/effect = SubResource("AudioEffectStereoEnhance_hlwl0")
+bus/2/effect/0/enabled = true
+bus/2/effect/1/effect = SubResource("AudioEffectSpectrumAnalyzer_1emdq")
+bus/2/effect/1/enabled = true

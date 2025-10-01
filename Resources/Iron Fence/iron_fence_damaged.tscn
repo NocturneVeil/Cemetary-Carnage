@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://pka3e1b6xn21"]
+
+[ext_resource type="PackedScene" uid="uid://daeqhnjaatjcd" path="res://Assets/kenney_graveyard-kit/Models/FBX format/Iron/iron-fence-damaged.fbx" id="1_g3jvn"]
+[ext_resource type="Material" uid="uid://bbh25yinxsb6a" path="res://Resources/Iron Fence/Fence_Mettalic.tres" id="2_lu3cm"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ymghc"]
+size = Vector3(1, 0.880737, 1)
+
+[node name="iron-fence-damaged" instance=ExtResource("1_g3jvn")]
+collision_layer = 7
+collision_mask = 7
+
+[node name="iron_fence_damaged" parent="." index="0"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+layers = 3
+lod_bias = 0.3
+visibility_range_end = 35.0
+visibility_range_end_margin = 65.0
+visibility_range_fade_mode = 2
+surface_material_override/0 = ExtResource("2_lu3cm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 0.4, 0, 1.66147, -1.8)
+shape = SubResource("BoxShape3D_ymghc")

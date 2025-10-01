@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://d4hoel7q6qxdh"]
+
+[ext_resource type="PackedScene" uid="uid://cf7y8uilq12e5" path="res://Assets/Ultimate Nature Pack - Jun 2019/FBX/Birch Tree/Birch Trees Norm/BirchTree_4.fbx" id="1_pg2de"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_4tcie"]
+height = 3.2
+
+[sub_resource type="BoxOccluder3D" id="BoxOccluder3D_uinbv"]
+size = Vector3(0.468254, 3.48362, 0.491049)
+
+[node name="BirchTree_4" instance=ExtResource("1_pg2de")]
+collision_layer = 7
+collision_mask = 7
+
+[node name="BirchTree_4" parent="." index="0"]
+transform = Transform3D(350, 0, 0, 0, -1.5299e-05, 350, 0, -350, -1.5299e-05, 0, 0, 0)
+layers = 3
+lod_bias = 0.5
+visibility_range_end = 35.0
+visibility_range_end_margin = 65.0
+visibility_range_fade_mode = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 1.5, -0.3)
+shape = SubResource("CylinderShape3D_4tcie")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 0.933436, 0.358743, 0, -0.358743, 0.933436, 0.211259, 1.33104, -0.306625)
+occluder = SubResource("BoxOccluder3D_uinbv")

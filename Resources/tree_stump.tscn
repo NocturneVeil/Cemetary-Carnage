@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bv5mr3iq8o3sc"]
+
+[ext_resource type="PackedScene" uid="uid://bnehbcjqa27f2" path="res://Assets/Ultimate Nature Pack - Jun 2019/FBX/Stump/TreeStump.fbx" id="1_nmofa"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_koisj"]
+height = 1.6
+radius = 1.33636
+
+[node name="TreeStump" instance=ExtResource("1_nmofa")]
+
+[node name="TreeStump" parent="." index="0"]
+transform = Transform3D(350, 0, 0, 0, -1.5299e-05, 350, 0, -350, -1.5299e-05, 0, 0, 0)
+lod_bias = 0.4
+visibility_range_end = 40.0
+visibility_range_end_margin = 80.0
+visibility_range_fade_mode = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, -0.145641)
+shape = SubResource("CylinderShape3D_koisj")

@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://ddi46us41qjh8"]
+
+[ext_resource type="PackedScene" uid="uid://bngr0p3yesr0" path="res://Assets/kenney_graveyard-kit/Models/FBX format/Cross/cross.fbx" id="1_s2gyq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cdn1u"]
+size = Vector3(1, 2, 0.2)
+
+[sub_resource type="BoxOccluder3D" id="BoxOccluder3D_xbo4j"]
+size = Vector3(0.231972, 1.61953, 0.139268)
+
+[node name="cross" instance=ExtResource("1_s2gyq")]
+collision_layer = 7
+collision_mask = 7
+
+[node name="cross" parent="." index="0"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+lod_bias = 0.3
+visibility_range_end = 25.0
+visibility_range_end_margin = 45.0
+visibility_range_fade_mode = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 2.23517e-08)
+shape = SubResource("BoxShape3D_cdn1u")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01873, 0)
+occluder = SubResource("BoxOccluder3D_xbo4j")

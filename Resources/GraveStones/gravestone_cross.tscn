@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://c81vvpu5vq5gm"]
+
+[ext_resource type="PackedScene" uid="uid://8oapb415j6bw" path="res://Assets/kenney_graveyard-kit/Models/FBX format/Grave_AND_Gravestone/gravestone-cross.fbx" id="1_4n6h1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_28cqw"]
+size = Vector3(1.4, 2.6, 1.1)
+
+[sub_resource type="BoxOccluder3D" id="BoxOccluder3D_apci6"]
+size = Vector3(0.329476, 2.84283, 0.210242)
+
+[node name="gravestone-cross" instance=ExtResource("1_4n6h1")]
+collision_layer = 7
+collision_mask = 7
+
+[node name="gravestone_cross" parent="." index="0"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+lod_bias = 0.3
+visibility_range_end = 25.0
+visibility_range_end_margin = 45.0
+visibility_range_fade_mode = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.96046e-08, 1.3, -0.05)
+shape = SubResource("BoxShape3D_28cqw")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3745, 0)
+occluder = SubResource("BoxOccluder3D_apci6")

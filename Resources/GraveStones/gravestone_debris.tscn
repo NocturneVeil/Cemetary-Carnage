@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsua5m4a1tb2p"]
+
+[ext_resource type="PackedScene" uid="uid://b600fusp6m1d2" path="res://Assets/kenney_graveyard-kit/Models/FBX format/Grave_AND_Gravestone/gravestone-debris.fbx" id="1_esa8h"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wo1nr"]
+size = Vector3(1.36913, 0.478271, 0.682617)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ckryu"]
+size = Vector3(1.31378, 0.539307, 1.47852)
+
+[node name="gravestone-debris" instance=ExtResource("1_esa8h")]
+collision_layer = 7
+collision_mask = 7
+
+[node name="gravestone_debris" parent="." index="0"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+layers = 3
+lod_bias = 0.3
+visibility_range_end = 25.0
+visibility_range_end_margin = 45.0
+visibility_range_fade_mode = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0645599, 0.260864, 0.0146484)
+shape = SubResource("BoxShape3D_wo1nr")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." index="2"]
+transform = Transform3D(0.932305, 0, -0.361673, 0, 1, 0, 0.361673, 0, 0.932305, 0.161025, 0.230347, -1.18251)
+shape = SubResource("BoxShape3D_ckryu")

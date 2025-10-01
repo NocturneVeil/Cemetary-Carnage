@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://ckcrql6lcgxdw"]
+
+[ext_resource type="PackedScene" uid="uid://ik2585bkos68" path="res://Assets/Ultimate Nature Pack - Jun 2019/FBX/Rock/Rock Norm/Rock_2.fbx" id="1_d1rk0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3dpbr"]
+size = Vector3(0.49707, 0.537659, 0.519043)
+
+[sub_resource type="BoxOccluder3D" id="BoxOccluder3D_8ewdm"]
+size = Vector3(1.36844, 1.96041, 1.4272)
+
+[node name="Rock_2" instance=ExtResource("1_d1rk0")]
+collision_layer = 3
+collision_mask = 3
+
+[node name="Rock_2" parent="." index="0"]
+transform = Transform3D(350, 0, 0, 0, -1.5299e-05, 350, 0, -350, -1.5299e-05, 0, 0, 0)
+layers = 3
+lod_bias = 0.3
+visibility_range_end = 35.0
+visibility_range_end_margin = 65.0
+visibility_range_fade_mode = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(4, 0, 0, 0, -1.74846e-07, 4, 0, -4, -1.74846e-07, 0.0175781, 0.961914, -0.0384522)
+shape = SubResource("BoxShape3D_3dpbr")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.117599, 0.6, -0.0758295)
+occluder = SubResource("BoxOccluder3D_8ewdm")

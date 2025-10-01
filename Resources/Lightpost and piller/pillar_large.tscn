@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://g38nndg5v1ip"]
+
+[ext_resource type="PackedScene" uid="uid://bgldhax6uspgc" path="res://Assets/kenney_graveyard-kit/Models/FBX format/Piller/pillar-large.fbx" id="1_at782"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_y0k71"]
+points = PackedVector3Array(-0.09, 0.849963, 0, -0.0500039, 0.91, 0, -0.0840094, 0.789926, -0.084, -0.0840094, 0, -0.084, -0.0840094, 0, 0.084, -0.0840094, 0.789926, 0.084, -0.025002, 0.91, 0.0432991, -0.025002, 0.91, -0.0433156, -0.045, 0.849963, -0.0779483, 0.0839918, 0.789926, -0.084, 0.0839918, 0, -0.084, 0.0839918, 0, 0.084, 0.0839918, 0.789926, 0.084, -0.045, 0.849963, 0.0779319, 0.0249843, 0.91, 0.0432991, 0.0249843, 0.91, -0.0433156, 0.045, 0.849963, -0.0779483, 0.0499863, 0.91, 0, 0.09, 0.849963, 0, 0.045, 0.849963, 0.0779319)
+
+[node name="pillar-large" instance=ExtResource("1_at782")]
+
+[node name="pillar_large" parent="." index="0"]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_y0k71")
